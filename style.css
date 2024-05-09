@@ -1,0 +1,313 @@
+:root {
+  --color-white:rgb(235, 235, 235);
+  --color-grey:rgb(230, 230, 230);
+  --color-black:rgb(20, 20, 20);
+  --color-red:rgb(105, 54, 54);
+  --color-tema: linear-gradient(338deg, rgb(200, 202, 211) 0%, rgba(111,140,215,1) 100%);
+  --font:"Raleway", sans-serif;
+  --espessura-titulo:500;
+  --espessura-subtitulo:100;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: var(--color-tema);
+  overflow-x: hidden;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-family: var(--font);
+}
+
+.info1 {
+  position: fixed;
+  width: 100vw;
+  height: 30px;
+  background-color: rgb(10, 0, 79);
+  z-index: 2;
+}
+.info1 div {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+  height: 30px;
+  animation: moveText 15s linear infinite;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  width: 90vw;
+  height: 70px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  backdrop-filter: blur(8px);
+  background-image: var(--color-tema);
+  border-radius: 24px;
+  position: fixed;
+  margin-top: 35px;
+  z-index: 2;
+}
+nav #btn-categoria {
+  margin-top: 23px;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: var(--espessura-subtitulo);
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: var(--color-black);
+}
+
+.categoria {
+  position: fixed;
+  margin-left: -110vw;
+  top: 110px;
+  border-radius: 24px;
+  height: auto;
+  backdrop-filter: blur(8px);
+  background-image: var(--color-tema);
+  transition: all 0.5s ease;
+  animation: sair 0.6s ease-out;
+  z-index: 3;
+}
+.categoria ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.categoria ul li {
+  flex: 1 1 200px;
+  list-style-type: none;
+  margin-top: 18px;
+  padding: 15px;
+}
+.categoria ul li a {
+  padding: 15px;
+  color: var(--color-white);
+  font-weight: var(--espessura-subtitulo);
+  font-family: var(--font);
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.categoriaClick {
+  top: 110px;
+  animation: 0.6s ease-out;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes scroll {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+@keyframes moveText {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+header {
+  position: relative;
+  width: 100vw;
+  height: 500px;
+  background-image: url(https://agenciabrasilia.df.gov.br/wp-conteudo/uploads/2020/06/CBB0F7E8-0952-45B0-9971-C4595A8231DD.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+#busca {
+  position: sticky;
+  height: 40px;
+  border: none;
+  border-radius: 24px;
+  background-color: var(--color-white);
+  font-size: 15px;
+  margin-left: 50%;
+  margin-top: 30px;
+  top: 45px;
+  padding: 10px;
+  transform: translate(-50%);
+  z-index: 2;
+}
+
+.info2 {
+  width: 100vw;
+  height: 220px;
+  margin-bottom: 50px;
+  background-image: url(/images/info.jpeg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: white;
+}
+
+.info3 {
+  width: 100vw;
+  height: 400px;
+  background-color: grey;
+}
+
+.container {
+  height: auto;
+  background-color: var(--color-white);
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.container .card {
+  height: auto;
+  margin: 100px 24px 0;
+  background-image: var(--color-tema);
+  color: var(--color-black);
+  border-radius: 15px;
+  box-shadow: -10px -10px 15px 15px rgba(107, 106, 106, 0.1843137255);
+  transition: hover 0.5s ease;
+  animation: scroll 2s ease-in;
+  animation-timeline: view();
+  animation-range: cover 0% cover 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+}
+.container .card h3 {
+  font-weight: var(--espessura-titulo);
+  font-family: var(--font);
+}
+.container .card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5em;
+}
+.container .card span {
+  color: red;
+  font-weight: var(--espessura-subtitulo);
+  font-family: var(--font);
+}
+.container .card .card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, #fdc4a1 0%, #f6cecb 51%, #fdc4a1 100%);
+  width: 100px;
+  height: 40px;
+  margin: 20px auto;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.container .card .card-btn a {
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  width: 100vw;
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  font-weight: var(--espessura-subtitulo);
+  font-family: var(--font);
+  background-color: var(--color-black);
+  color: rgb(100, 99, 99);
+  padding: 0;
+  margin: 0;
+  margin-top: 100px;
+}
+footer div {
+  display: flex;
+}
+footer div img {
+  height: 20px;
+  width: auto;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+footer .sobre {
+  margin: 36px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+footer .sobre a {
+  color: white;
+}
+
+@media screen and (min-width: 1023px) {
+  #busca {
+    width: 50%;
+  }
+  .card:hover {
+    transition: all 0.5s ease;
+    box-shadow: 0 0 8px 2px rgba(109, 109, 109, 0.1019607843);
+    transform: scale(0.995);
+  }
+  .card-btn:hover {
+    color: green;
+    box-shadow: 0px 0 10px 1px grey;
+    transform: scale(1.1);
+  }
+  .categorias:hover {
+    color: var(--color-black);
+  }
+  #btn-categoria:hover {
+    color: #c2e9fb;
+  }
+  .categoria {
+    width: 90vw;
+  }
+  .container .card {
+    flex: 1 1 250px;
+  }
+}
+@media screen and (max-width: 1022px) and (min-width: 768px) {
+  #busca {
+    width: 50%;
+  }
+  .categoria {
+    width: 90vw;
+  }
+  .container .card {
+    flex: 1 1 250px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #busca {
+    width: 30%;
+  }
+  .info1 div {
+    font-size: 10px;
+  }
+  .categoria {
+    width: 90vw;
+  }
+  .container .card {
+    flex: 1 1 150px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
